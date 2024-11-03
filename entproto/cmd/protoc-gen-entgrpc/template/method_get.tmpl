@@ -17,7 +17,9 @@
             {{ range .G.FieldMap.Edges }}
                 {{- $et := .EntEdge.Type -}}
                 With{{ .EntEdge.StructField }}(func(query *ent.{{ $et.Name }}Query) {
-                    query.Select({{  qualify (print (unquote $.G.EntPackage.String) "/" $et.Package ) $et.ID.Constant  }})
+                    var _ = {{  qualify (print (unquote $.G.EntPackage.String) "/" $et.Package ) $et.ID.Constant  }}
+                    // query.Select({{  qualify (print (unquote $.G.EntPackage.String) "/" $et.Package ) $et.ID.Constant  }})
+
                 }).
             {{ end }}
             Only(ctx)
