@@ -1,4 +1,4 @@
-module entgo.io/contrib
+module github.com/wj-stack/contrib
 
 go 1.22.5
 
