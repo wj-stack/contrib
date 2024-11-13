@@ -1,6 +1,10 @@
-module github.com/wj-stack/contrib
+module entgo.io/contrib
 
 go 1.22.5
+
+replace (
+	entgo.io/contrib =>  github.com/wj-stack/contrib latest
+)
 
 require (
 	entgo.io/ent v0.13.2-0.20240717044502-34158f2c129b
